@@ -30,6 +30,7 @@ namespace Practica01
         }
         List<Omnibus> ListaPasajerosOmnibus = new List<Omnibus>();
         List<Taxi> ListaPasajerosTaxi = new List<Taxi>();
+        
         private void buttonCargar_Click(object sender, EventArgs e)
         {
             switch (validaciones())
@@ -43,12 +44,23 @@ namespace Practica01
                             ListaPasajerosOmnibus.Add(pasajerosO);
 
                             listView1.Items.Clear();
+                            int loop = 0;
                             foreach (Omnibus omnibus in ListaPasajerosOmnibus)
                             {
                                 ListViewItem item = new ListViewItem();
                                 item = listView1.Items.Add(omnibus.Cantidad.ToString());
+                                loop++;
 
+                                if (loop == 5)
+                                {
+                                    string mensaje = "Ómnibus disponibles cargados.";
+                                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                                    MessageBox.Show(mensaje, "Carga exitosa!", buttons);
+                                    break;
+                                }
+                                
                             }
+                            
                             textOmnibus1.Clear();
                             textOmnibus1.Focus();
                             break;
@@ -60,10 +72,21 @@ namespace Practica01
                             ListaPasajerosTaxi.Add(pasajerosT);
 
                             listView2.Items.Clear();
+                            int loop = 0;
                             foreach (Taxi taxi in ListaPasajerosTaxi)
                             {
+                                
                                 ListViewItem item = new ListViewItem();
                                 item = listView2.Items.Add(taxi.Cantidad.ToString());
+                                loop++;
+                                
+                                if (loop == 5)
+                                {
+                                    string mensaje = "Taxis disponibles cargados.";
+                                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                                    MessageBox.Show(mensaje, "Carga exitosa!", buttons);
+                                    break;
+                                }
 
                             }
                             textTaxi1.Clear();
