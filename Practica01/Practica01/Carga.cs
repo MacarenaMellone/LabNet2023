@@ -37,60 +37,14 @@ namespace Practica01
             {
                 case 0:
                     {
-                        if (textTaxi1.Text.ToString() == "") 
+                        if (textTaxi.Text.ToString() == "") 
                         {
-                            Omnibus pasajerosO = new Omnibus();
-                            pasajerosO.Cantidad = Convert.ToInt32(textOmnibus1.Text);
-                            ListaPasajerosOmnibus.Add(pasajerosO);
-
-                            listView1.Items.Clear();
-                            int loop = 0;
-                            foreach (Omnibus omnibus in ListaPasajerosOmnibus)
-                            {
-                                ListViewItem item = new ListViewItem();
-                                item = listView1.Items.Add(omnibus.Cantidad.ToString());
-                                loop++;
-
-                                if (loop == 5)
-                                {
-                                    string mensaje = "Ómnibus disponibles cargados.";
-                                    MessageBoxButtons buttons = MessageBoxButtons.OK;
-                                    MessageBox.Show(mensaje, "Carga exitosa!", buttons);
-                                    break;
-                                }
-                                
-                            }
-                            
-                            textOmnibus1.Clear();
-                            textOmnibus1.Focus();
+                            cargaOmnibus();
                             break;
                         }
                         else 
                         {
-                            Taxi pasajerosT = new Taxi();
-                            pasajerosT.Cantidad = Convert.ToInt32(textTaxi1.Text);
-                            ListaPasajerosTaxi.Add(pasajerosT);
-
-                            listView2.Items.Clear();
-                            int loop = 0;
-                            foreach (Taxi taxi in ListaPasajerosTaxi)
-                            {
-                                
-                                ListViewItem item = new ListViewItem();
-                                item = listView2.Items.Add(taxi.Cantidad.ToString());
-                                loop++;
-                                
-                                if (loop == 5)
-                                {
-                                    string mensaje = "Taxis disponibles cargados.";
-                                    MessageBoxButtons buttons = MessageBoxButtons.OK;
-                                    MessageBox.Show(mensaje, "Carga exitosa!", buttons);
-                                    break;
-                                }
-
-                            }
-                            textTaxi1.Clear();
-                            textTaxi1.Focus();
+                            cargaTaxis();
                             break;
                         }
                     }
@@ -104,23 +58,81 @@ namespace Practica01
                         errorProvider1.SetError(textError, "Ingresar sólo números positivos");
                         break;
                     }
-
             }
-
         }
 
         public int validaciones()
         {
-            if ((textOmnibus1.Text.All(Char.IsNumber)) & (textTaxi1.Text.All(Char.IsNumber))) {
-                if ((string.IsNullOrEmpty(textOmnibus1.Text)) & (string.IsNullOrEmpty(textTaxi1.Text))){
+            if ((textOmnibus.Text.All(Char.IsNumber)) & (textTaxi.Text.All(Char.IsNumber))) {
+                if ((string.IsNullOrEmpty(textOmnibus.Text)) & (string.IsNullOrEmpty(textTaxi.Text))){
                     return 1;
                 }
-                else {
-                    return 0; 
-                }   
+                else { 
+                    return 0; }
             }
             else{
                 return 2;
+            }
+        }
+
+        private void cargaOmnibus()
+        {
+            Omnibus pasajerosO = new Omnibus();
+            pasajerosO.Cantidad = Convert.ToInt32(textOmnibus.Text);
+            ListaPasajerosOmnibus.Add(pasajerosO);
+
+            listView1.Items.Clear();
+            int loop = 0;
+            foreach (Omnibus omnibus in ListaPasajerosOmnibus)
+            {
+                ListViewItem item = new ListViewItem();
+                item = listView1.Items.Add(omnibus.Cantidad.ToString());
+                loop++;
+
+                if (loop == 5)
+                {
+                    string mensaje = "Ómnibus disponibles cargados.";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show(mensaje, "Carga exitosa!", buttons);
+                    break;
+                }
+
+            }
+
+            textOmnibus.Clear();
+            textOmnibus.Focus();
+        }
+
+        private void cargaTaxis()
+        {
+            if (Convert.ToInt32(textTaxi.Text) <= 4)
+            {
+                Taxi pasajerosT = new Taxi();
+                pasajerosT.Cantidad = Convert.ToInt32(textTaxi.Text);
+                ListaPasajerosTaxi.Add(pasajerosT);
+
+                listView2.Items.Clear();
+                int loop = 0;
+                foreach (Taxi taxi in ListaPasajerosTaxi)
+                {
+
+                    ListViewItem item = new ListViewItem();
+                    item = listView2.Items.Add(taxi.Cantidad.ToString());
+                    loop++;
+
+                    if (loop == 5)
+                    {
+                        string mensaje = "Taxis disponibles cargados.";
+                        MessageBoxButtons buttons = MessageBoxButtons.OK;
+                        MessageBox.Show(mensaje, "Carga exitosa!", buttons);
+                        break;
+                    }
+                }
+                textTaxi.Clear();
+                textTaxi.Focus();
+            }
+            else {
+                errorProvider1.SetError(textError, "No pueden viajar más de 4 pasajeros en un taxi");
             }
         }
 
@@ -137,6 +149,13 @@ namespace Practica01
         private void Form2_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonLimpiar_Click(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+            listView2.Items.Clear();
+            textOmnibus.Focus();
         }
     }
 }
