@@ -106,6 +106,7 @@
             // 
             // btndividir1
             // 
+            this.btndividir1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btndividir1.FlatAppearance.BorderSize = 2;
             this.btndividir1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btndividir1.Font = new System.Drawing.Font("Rajdhani", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -32,6 +32,10 @@ namespace Practica2
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             finally 
             {
                 MessageBox.Show("El ejercicio ha finalizado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);

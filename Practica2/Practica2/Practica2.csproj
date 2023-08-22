@@ -70,8 +70,8 @@
     <Compile Include="Ejercicio4.Designer.cs">
       <DependentUpon>Ejercicio4.cs</DependentUpon>
     </Compile>
-    <Compile Include="ExceptionMat.cs" />
-    <Compile Include="ExceptionPersonalizada.cs" />
+    <Compile Include="Exceptions\ExceptionMat.cs" />
+    <Compile Include="Exceptions\ExceptionPersonalizada.cs" />
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -52,6 +52,9 @@
             // 
             // btndividir0
             // 
+            this.btndividir0.BackColor = System.Drawing.SystemColors.Control;
+            this.btndividir0.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btndividir0.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btndividir0.FlatAppearance.BorderSize = 2;
             this.btndividir0.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btndividir0.Font = new System.Drawing.Font("Rajdhani", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -61,7 +64,7 @@
             this.btndividir0.Size = new System.Drawing.Size(32, 33);
             this.btndividir0.TabIndex = 19;
             this.btndividir0.Text = "=";
-            this.btndividir0.UseVisualStyleBackColor = true;
+            this.btndividir0.UseVisualStyleBackColor = false;
             this.btndividir0.Click += new System.EventHandler(this.btndividir0_Click);
             // 
             // dividendo
