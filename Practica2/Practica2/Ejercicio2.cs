@@ -24,18 +24,20 @@ namespace Practica2
 
         private void btndividir1_Click(object sender, EventArgs e)
         {
+
             Dividir();
         }
 
         private void Dividir()
         {
+            ExceptionMat dividir = new ExceptionMat();
             try
             {
                 if (divisor.Text.ToString() == "0")
                 {
                     int a = Convert.ToInt32(dividendo.Text);
                     int b = Convert.ToInt32(divisor.Text);
-                    ExceptionMat.SimpleException(a, b);
+                    dividir.SimpleException(a, b);
                     divisor.Clear();
 
                 }

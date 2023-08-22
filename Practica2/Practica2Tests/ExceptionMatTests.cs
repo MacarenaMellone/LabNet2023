@@ -8,21 +8,29 @@ namespace Practica2.Tests
         [TestMethod()]
         public void SimpleExceptionTest()
         {
-            int a = 50;
+            ExceptionMat division = new ExceptionMat();
+            int a = 20;
             int b = 2;
+            int c = 25;
+            int d = 5;
+            int res = 10;
+            int res2 = 5;
 
-            ExceptionMat.SimpleException(a, b);
+            int resultado = division.SimpleException(a, b);
+            int resultado2 = division.SimpleException(c, d);
 
-            Assert.IsTrue(true);
+            Assert.AreEqual(res, resultado);
+            Assert.AreEqual(res2, resultado2);
         }
 
         [TestMethod()]
         public void SimpleExceptionTest2()
         {
+            ExceptionMat division = new ExceptionMat();
             int a = 50;
             int b = 0;
 
-            ExceptionMat.SimpleException(a, b);
+            division.SimpleException(a, b);
 
             Assert.IsTrue(true);
         }

@@ -5,20 +5,23 @@ namespace Practica2
 {
     public class Logic : ExceptionMat
     {   
-        public static void MayorMenor(int valor1, int valor2, bool calcula)
+        public int MayorMenor(int valor1, int valor2, bool calcula)
         {
             try
             {
                 if (valor1 > valor2){
                     MessageBox.Show($"{valor1} es mayor que {valor2}", "Correcto!");
+                    return 0;
                 }
                 else{
                     ComparacionMayorMenorException();
+                    return 1;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ex.StackTrace,"Error");
+                return -1;
             }
         }
      

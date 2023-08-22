@@ -20,21 +20,23 @@ namespace Practica2
             divicionCero();    
         }
 
-        public void divicionCero()
+        public int divicionCero()
         {
             try
             {
                 int a = Convert.ToInt32(dividendo.Text);
                 int b = Convert.ToInt32(cero.Text);
-                int division = a / b;
+                return a / b;
             }
             catch (DivideByZeroException ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1;  
             }
             finally 
             {

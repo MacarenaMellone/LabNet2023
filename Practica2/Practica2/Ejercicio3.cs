@@ -17,11 +17,12 @@ namespace Practica2
 
         private void mayorMenor_Click(object sender, EventArgs e)
         {
+            Logic calcularMayorMenor = new Logic();
             try
             {
                 int valor1 = Convert.ToInt32(mayor.Text);
                 int valor2 = Convert.ToInt32(menor.Text);
-                Logic.MayorMenor(valor1, valor2, true);
+                calcularMayorMenor.MayorMenor(valor1, valor2, true);
                 mayor.Clear();
                 menor.Clear();
                 mayor.Focus();

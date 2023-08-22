@@ -8,21 +8,16 @@ namespace Practica2.Tests
         [TestMethod()]
         public void MayorMenorTest()
         {
+            Logic compararMayotMenor = new Logic();
             int valor1 = 20;
             int valor2 = 10;
+            int valor3 = 2;
+            int valor4 = 30;
 
-            Logic.MayorMenor(valor1, valor2, true);
+            compararMayotMenor.MayorMenor(valor1, valor2, true);
+            compararMayotMenor.MayorMenor(valor3, valor4, true);
 
             Assert.IsTrue(true);
-        }
-        [TestMethod()]
-        public void MayorMenorTest2()
-        {
-            int valor1 = 10;
-            int valor2 = 30;
-
-            Logic.MayorMenor(valor1, valor2, true);
-
             Assert.IsTrue(true);
         }
     }
