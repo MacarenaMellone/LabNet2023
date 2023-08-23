@@ -50,27 +50,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CargaTaxi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CargaTaxi.Designer.cs">
+      <DependentUpon>CargaTaxi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Carga.cs">
+    <Compile Include="CargaOmnibus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Carga.Designer.cs">
-      <DependentUpon>Carga.cs</DependentUpon>
+    <Compile Include="CargaOmnibus.Designer.cs">
+      <DependentUpon>CargaOmnibus.cs</DependentUpon>
     </Compile>
     <Compile Include="Omnibus.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Taxi.cs" />
+    <Compile Include="TransportePublico.cs" />
+    <EmbeddedResource Include="CargaTaxi.resx">
+      <DependentUpon>CargaTaxi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Carga.resx">
-      <DependentUpon>Carga.cs</DependentUpon>
+    <EmbeddedResource Include="CargaOmnibus.resx">
+      <DependentUpon>CargaOmnibus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

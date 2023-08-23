@@ -2,9 +2,15 @@
 
 namespace Practica01
 {
-    public class Omnibus
+    public class Omnibus : TransportePublico
     {
-        public int Cantidad { get; set; }
+        public Omnibus (int cantidadP, string coche) : base(cantidadP, coche) { }
+        public override string Avanzar(){
+            return string.Format("{1} Avanza con {0} pasajeros.", CantidadP, Coche);
+        }
+        public override string Detenerse(){
+            throw new NotImplementedException();
+        }
     }
 }
 

@@ -15,10 +15,16 @@ namespace Practica01
             Close();
         }
 
-        private void btnCargar_Click(object sender, EventArgs e)
+        private void btnCargarOmnibus_Click(object sender, EventArgs e)
         {
-            using (Carga cargaTaxiOmnibus = new Carga())
-                cargaTaxiOmnibus.ShowDialog();
+            using (Carga cargaOmnibus = new Carga())
+                cargaOmnibus.ShowDialog();
+        }
+
+        private void btnCargaTaxi_Click(object sender, EventArgs e)
+        {
+            using (CargaTaxi cargaOmnibus = new CargaTaxi())
+                cargaOmnibus.ShowDialog();
         }
     }
 }
