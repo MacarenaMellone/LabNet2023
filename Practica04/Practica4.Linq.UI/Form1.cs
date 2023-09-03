@@ -15,9 +15,11 @@ namespace Practica4.Linq.UI
             labelEjer.Text = "BIENVENIDO";
             label1.Text = "SELECCIONE UN EJERCICIO";
         }
+
         private static CustomersLogic customersLogic = new CustomersLogic();
         private static ProductsLogic productsLogic = new ProductsLogic();
         private static CategoriesLogic categoriesLogic = new CategoriesLogic();
+
         private void btnEjer1_Click(object sender, EventArgs e)
         {
             ResetLabels();
