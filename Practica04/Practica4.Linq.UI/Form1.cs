@@ -95,7 +95,7 @@ namespace Practica4.Linq.UI
         {
             ResetLabels();
             labelEjer.Text = "EJERCICIO 7";
-            labelSub.Text = "Query para devolver Join entre Customers y Orders\ndónde los customers sean de la Región WA y la fecha de órden sea mayor a 1/1/1997.";
+            labelSub.Text = "Query para devolver Join entre Customers y Orders\ndónde los customers sean de la Región WA y la fecha de orden sea mayor a 1/1/1997.";
             label6.Text = "CLIENTE  -  ORDEN  -  COMPAÑÍA  -  REGIÓN  -  ORDEN  -  FECHA DE ORDEN";
 
             var tuple = customersLogic.CustomerOrder();
