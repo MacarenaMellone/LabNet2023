@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Practica4.Linq.UI
 {
-    public partial class Form1 : Form
+    public partial class Form1 : System.Windows.Forms.Form
     {
         public Form1()
         {
@@ -15,20 +15,16 @@ namespace Practica4.Linq.UI
             labelEjer.Text = "BIENVENIDO";
             label1.Text = "SELECCIONE UN EJERCICIO";
         }
-
         private static CustomersLogic customersLogic = new CustomersLogic();
         private static ProductsLogic productsLogic = new ProductsLogic();
         private static CategoriesLogic categoriesLogic = new CategoriesLogic();
-
         private void btnEjer1_Click(object sender, EventArgs e)
         {
             ResetLabels();
-            labelEjer.Text = "EJERCICIO 1";
-            labelSub.Text = "Query para devolver objeto customer.";
-            label6.Text = "ID  -   COMPAÑÍA  -  CIUDAD  -  PAÍS";
-
-            Customers customers = customersLogic.CustomerObjects("Sweden");
-            label4.Text = $"{customers.CustomerID} - {customers.CompanyName} -  {customers.City} - {customers.Country}";
+            using (Form2 formCustomers = new Form2())
+                formCustomers.ShowDialog();
+            labelEjer.Text = "BIENVENIDO";
+            label1.Text = "SELECCIONE UN EJERCICIO";
         }
         private void btnEjer2_Click(object sender, EventArgs e)
         {
@@ -169,7 +165,7 @@ namespace Practica4.Linq.UI
             ResetLabels();
             labelEjer.Text = "EJERCICIO 13";
             labelSub.Text = "Query para devolver los customer con la cantidad de ordenes asociadas.";
-            label6.Text = "ÓRDENES ASOCIADAS  -  ID  -  CLIENTE";
+            label6.Text = "ORDENES ASOCIADAS  -  ID  -  CLIENTE";
 
             var tuple = customersLogic.CustomerOrdersA();
             foreach (var c in tuple){

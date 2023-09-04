@@ -418,8 +418,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelSub);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Practica 4 ";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelRes.ResumeLayout(false);

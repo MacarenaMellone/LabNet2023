@@ -12,9 +12,9 @@ namespace Practica04.Linq.Logic
             return context.Customers.ToList();
         }
         //Ejer.1
-        public Customers CustomerObjects(string country)
+        public Customers CustomerObjects(string custimerID)
         {
-            var query = context.Customers.Where(c => c.Country == country);
+            var query = context.Customers.Where(c => c.CustomerID == custimerID);
             return query.FirstOrDefault();
         }
         //Ejer.4
