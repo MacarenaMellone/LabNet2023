@@ -8,7 +8,6 @@ const resetBoton = document.querySelector("#reset");
 
 function iniciar(){
     const numI = Number(valorInput.value);
-    console.log(numAlea);
     if(intentos != -1){
         if(numI==numAlea){
             pistas.textContent = "";
