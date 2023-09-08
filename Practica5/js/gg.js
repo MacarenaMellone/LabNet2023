@@ -55,5 +55,11 @@ function resetL(){
     resetBoton.disabled = true;
 }
 
-botonIntento.addEventListener("click", iniciar);
+botonIntento.addEventListener("click", ()=>{
+    if(valorInput.value.length == 0){
+        alert('Para jugar ingrese un número');
+    }else{
+        iniciar();
+    }
+});
 resetBoton.addEventListener("click", resetL);
