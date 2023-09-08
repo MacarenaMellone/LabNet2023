@@ -4,19 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nabla&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&family=Montserrat&display=swap" rel="stylesheet">
     <title>Practica 5</title>
 </head>
 <body>
-    <h1>ADIVINA EL NÚMERO</h1>
-    <input type="text">
-    <input type="button" id="boton" value="JUGAR">
-    <script type="text/javascript">
-        document.getElementById("boton").addEventListener("click",iniciar);
-        function iniciar(){
-            let intentos = 5;
-            let num = Math.floor((Math.random()*20)+1);
-            console.log(num);
-        }
+    <h1 class="title">ADIVINA EL NÚMERO</h1>
+    <p>¡SÓLO TIENES 6 INTENTOS!</p>
+    <div id="juego">
+        <p id="devuelve"></p>
+        <p id="pistas"></p>
+        <input type="text" class="validar" id="valor">
+    </div>
+    <div class="btnJugar">
+        <input type="button" id="boton" value="JUGAR">          
+    </div>
+    <span id="highScore"></span>
+    <div>
+        <input type="button" id="reset" value="VOLVER A JUGAR">        
+    </div>
+    <div class="reglamento">
+        <h2 class="reglaTitle">¿CÓMO JUGAR?</h2>
+        <p id="ocultarTexto">
+            1- Ingrese un número. <br>
+            2- Si el número ingresado no es correcto, se brinda una pista. <br>
+            3- Por cada intento incorrecto se restarán puntos. <br>
+            4- Adivine el número antes de que se le acaben los intentos. <br>
+            5- Si pierde, presione "Volver a jugar".
+        </p>        
+    </div>
+    <script type="text/javascript" src="js/gg.js">
+        $(function(){
+        $(".validar").keydown(function(event){
+            if((event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105) && event.keyCode !==190  && event.keyCode !==110 && event.keyCode !==8 && event.keyCode !==9){
+                return false;
+            }
+        });
+        });
     </script>
 </body>
 </html>

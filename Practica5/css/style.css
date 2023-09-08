@@ -1,3 +1,65 @@
-h1 {
-    color: brown;
+*{
+    text-align: center;
+    background-color: rgb(26, 25, 25);
+}
+.title{
+    font-family: 'Nabla', cursive;
+    font-size: 80px;
+    margin: 200px;
+    margin-bottom: 100px;
+}
+p, #highScore{
+    color: rgb(231, 231, 231);
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+}
+.reglaTitle{
+    font-family: 'Barlow', sans-serif;
+    font-size: 30px;
+    color: rgb(255 210 20);
+}
+input{
+    margin: 40px;
+    margin-bottom: 5px;
+    width: 150px;
+}
+input#boton, #reset, #ocultarTextoBoton{
+    border-radius: 25px;
+    background-color: rgb(255 210 20);
+    border-bottom-color: #ff9c2a;
+    border-left-color: #ff9c2a;
+    border-top-color: #f7e2da;
+    border-right-style: hidden;
+    color: rgb(27, 27, 27);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    height: 40px;    
+}
+#devuelve{
+    font-size: 30px;
+}
+#valor{
+    border-radius: 25px;
+    border-style: solid;
+    border-color: #fcd424;
+    background-color: #4e4e4e;
+    color: rgb(231, 231, 231);
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    height: 30px;
+}
+#boton{
+    margin-bottom: 25px;
+}
+#reset{
+    background-color:#ff9c2a;
+}
+.buttons{
+    margin: 100px;
+    width: auto;
+}
+.reglamento{
+    margin: 50px;
+    margin-top: 180px;
 }
