@@ -23,7 +23,7 @@ input{
     margin-bottom: 5px;
     width: 150px;
 }
-input#boton, #reset, #ocultarTextoBoton{
+input#boton, #reset{
     border-radius: 25px;
     background-color: rgb(255 210 20);
     border-bottom-color: #ff9c2a;
@@ -34,7 +34,8 @@ input#boton, #reset, #ocultarTextoBoton{
     font-family: 'Barlow', sans-serif;
     font-weight: 700;
     font-size: 15px;
-    height: 40px;    
+    height: 40px; 
+    cursor: pointer;   
 }
 #devuelve{
     font-size: 30px;
