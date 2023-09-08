@@ -8,7 +8,7 @@ const resetBoton = document.querySelector("#reset");
 
 function iniciar(){
     const numI = Number(valorInput.value);
-    if(intentos != -1){
+    if(intentos != 0){
         if(numI==numAlea){
             pistas.textContent = "";
             document.getElementById("devuelve").innerHTML = `✔️ ¡ADIVINASTE! Puntaje: ${puntaje} ✔️`;
