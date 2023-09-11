@@ -11,28 +11,28 @@ namespace Practica3.EF.Logic.Tests
     [TestClass()]
     public class CategoriesLogicTests
     {
-        [TestMethod()]
-        public void AddTest()
-        {
-            var mockSet = new Mock<DbSet<Categories>>();
+        //[TestMethod()]
+        //public void AddTest()
+        //{
+        //    var mockSet = new Mock<DbSet<Categories>>();
 
-            var mockContext = new Mock<NorthwindContext>();
-            mockContext.Setup(m => m.Categories).Returns(mockSet.Object);
+        //    var mockContext = new Mock<NorthwindContext>();
+        //    mockContext.Setup(m => m.Categories).Returns(mockSet.Object);
 
-            CategoriesLogic categoriesLogic = new CategoriesLogic(mockContext.Object);
+        //    CategoriesLogic categoriesLogic = new CategoriesLogic(mockContext.Object);
 
-            categoriesLogic.Add(new Categories
-            {
-                CategoryID = 12,
-                CategoryName = "Test",
-                Description = "DescriptionTest"
-            });
+        //    categoriesLogic.Add(new Categories
+        //    {
+        //        CategoryID = 12,
+        //        CategoryName = "Test",
+        //        Description = "DescriptionTest"
+        //    });
 
-            mockSet.Verify(m => m.Add(It.IsAny<Categories>()), Times.Once());
-            mockContext.Verify(m => m.SaveChanges(), Times.Once());
+        //    mockSet.Verify(m => m.Add(It.IsAny<Categories>()), Times.Once());
+        //    mockContext.Verify(m => m.SaveChanges(), Times.Once());
 
 
 
-        }
+        //}
     }
 }

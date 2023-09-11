@@ -1,5 +1,6 @@
 ﻿using Practica3.EF.Entities;
 using Practica3.EF.Logic;
+using Practica3.EF.Logic.DTOs;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -172,7 +173,7 @@ namespace Practica3
             string valor3;
             valor3 = txtDesc.Text;
 
-            categoriesLogic.Update(new Categories
+            categoriesLogic.Update(new CategoriesDto
             {
                 CategoryID = valor1,
                 CategoryName = valor2,
@@ -197,7 +198,7 @@ namespace Practica3
             string valor2;
             valor2 = txtDesc.Text;
 
-            categoriesLogic.Add(new Categories
+            categoriesLogic.Add(new CategoriesDto
             {
                 CategoryName = valor1,
                 Description = valor2

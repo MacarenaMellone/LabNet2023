@@ -1,5 +1,6 @@
 ﻿using Practica3.EF.Entities;
 using Practica3.EF.Logic;
+using Practica3.EF.Logic.DTOs;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -147,7 +148,7 @@ namespace Practica3
             string valor2;
             valor2 = txtTel.Text;
 
-            shippersLogic.Add(new Shippers
+            shippersLogic.Add(new ShippersDto
             {
                 CompanyName = valor1,
                 Phone = valor2
@@ -173,7 +174,7 @@ namespace Practica3
             string valor3;
             valor3 = txtTel.Text;
 
-            shippersLogic.Update(new Shippers
+            shippersLogic.Update(new ShippersDto
             {
                ShipperID = valor1,
                CompanyName = valor2,

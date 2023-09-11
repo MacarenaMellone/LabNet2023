@@ -1,27 +1,46 @@
 ﻿using Practica3.EF.Entities;
+using Practica3.EF.Logic.DTOs;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Practica3.EF.Logic
 {
-    public class CategoriesLogic : BaseLogic, ILogic<Categories>
+    public class CategoriesLogic : BaseLogic, ILogic<CategoriesDto>
     {
-        public List<Categories> GetAll()
+        //public List<Categories> GetAll()
+        //{
+        //    return context.Categories.ToList();
+        //}
+        public List<CategoriesDto> GetAll()
         {
-            return context.Categories.ToList();
+            IEnumerable<Categories> categories = context.Categories.AsEnumerable();
+            List<CategoriesDto> result = categories.Select(x => new CategoriesDto
+            {
+                CategoryID = x.CategoryID,
+                CategoryName = x.CategoryName,
+                Description = x.Description
+            }).ToList();
+            return result;
         }
-        public void Add(Categories newCategories)
+        public void Add(CategoriesDto dto)
         {
+            var newCategories = new Categories()
+            {
+                CategoryID = dto.CategoryID,
+                CategoryName = dto.CategoryName,
+                Description = dto.Description
+            };
             context.Categories.Add(newCategories);
             context.SaveChanges();
         }
-        public void Update(Categories categories)
+        public void Update(CategoriesDto dto)
         {
-            var categoriesUpdate = context.Categories.Find(categories.CategoryID);
+            //var categoriesUpdate = context.Categories.Find(categories.CategoryID);
+            Categories categoriesUpdate = context.Categories.FirstOrDefault(x => x.CategoryID == dto.CategoryID);
             if (categoriesUpdate != null)
             {
-                categoriesUpdate.CategoryName = categories.CategoryName;
-                categoriesUpdate.Description = categories.Description;
+                categoriesUpdate.CategoryName = dto.CategoryName;
+                categoriesUpdate.Description = dto.Description;
                 context.SaveChanges();
             }
             else
@@ -29,9 +48,11 @@ namespace Practica3.EF.Logic
                 ExceptionsLogic.CustomExceptionModificar();
             }  
         }
-        public void Delete(int id)
+        public bool Delete(int id)
         {
-            var categoriesDelete = context.Categories.Find(id);
+            bool result = true;
+            //var categoriesDelete = context.Categories.Find(id);
+            Categories categoriesDelete = context.Categories.Find(id);
             if (categoriesDelete != null)
             {
                 context.Categories.Remove(categoriesDelete);
@@ -41,6 +62,12 @@ namespace Practica3.EF.Logic
             {
                 ExceptionsLogic.CustomExceptionDelete();
             }
+
+            return result;
+        }
+        public Categories GetId(int id)
+        {
+            return context.Categories.Find(id);
         }
     }
 }
