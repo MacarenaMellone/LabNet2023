@@ -2,19 +2,21 @@
 @{
     ViewBag.Title = "Categories";
 }
-
-<h1>Modificar Categoria</h1>
+<br/>
+<br/>
+<h1>Modificar Categoría</h1>
+<hr/>
 <br/>
 @using (Html.BeginForm("EditView", "Categories", FormMethod.Post))
 {
     @Html.HiddenFor(c => c.CategoryID)
 
-    <label for="CategoryName">Nombre Categoria:</label> @Html.TextBoxFor(c => c.CategoryName, new { @class = "form-control", @required = "required" })
+    <label for="CategoryName">Nombre Categoría:</label> @Html.TextBoxFor(c => c.CategoryName, new { @class = "form-control", @required = "required" , @maxlength = "15", autocomplete = "off" })
     <br/>
-    <label>Descripcion Categoria:</label> @Html.TextBoxFor(c => c.Description, new { @class = "form-control" })
+    <label>Descripción Categoría:</label> @Html.TextBoxFor(c => c.Description, new { @class = "form-control", @maxlength = "150", autocomplete = "off" })
     <br/>
     <br/>
-    <input type="submit" class="btn btn-success" value="Guardar" onclick="return confirm('Esta seguro que quiere guardar los cambios?')"/>
+    <input type="submit" class="btn btn-success" value="Guardar" onclick="return confirm('¿Está seguro que quiere guardar los cambios?')"/>
 }
 <br>
 <br/>

@@ -36,7 +36,6 @@ namespace Practica3.EF.Logic
                 shippersUpdate.CompanyName = dto.CompanyName;
                 shippersUpdate.Phone = dto.Phone;
                 context.SaveChanges();
-            
             }
             else{
                 ExceptionsLogic.CustomExceptionModificar();
@@ -44,7 +43,7 @@ namespace Practica3.EF.Logic
         }
         public bool Delete(int id)
         {
-            bool result = false;
+            bool result = true;
             var shipperDelete = context.Shippers.Find(id);
             if (shipperDelete != null)
             {
@@ -56,6 +55,10 @@ namespace Practica3.EF.Logic
                 ExceptionsLogic.CustomExceptionDelete();
             }
             return result;
+        }
+        public Shippers GetId(int id)
+        {
+            return context.Shippers.Find(id);
         }
     }
 }

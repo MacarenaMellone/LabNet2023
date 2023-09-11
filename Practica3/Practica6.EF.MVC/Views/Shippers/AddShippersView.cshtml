@@ -1,0 +1,23 @@
+﻿@model Practica3.EF.Logic.DTOs.ShippersDto
+@{
+    ViewBag.Title = "AddShippersView";
+}
+<br/>
+<br/>
+<h1>Agregar Shipper</h1>
+<hr/>
+<br/>
+@using (Html.BeginForm("AddShippersView", "Shippers", FormMethod.Post))
+{
+    <label>Nombre de Compañía:</label> @Html.TextBoxFor(s => s.CompanyName, new { @class = "form-control", @required = "required", @maxlength = "40", autocomplete = "off" })
+    <br/>
+    <label>Teléfono:</label> @Html.TextBoxFor(s => s.Phone, new { @class = "form-control", @maxlength = "24", autocomplete = "off" })
+    <br/>
+    <br/>
+    <input type="submit" class="btn btn-success" value="Guardar" onclick="return confirm('¿Está seguro que quiere guardar?')" />
+}
+<br/>
+<br/>
+<div>
+    @Html.ActionLink("Volver", "Index", "Shippers")
+</div>

@@ -3,12 +3,7 @@ using Practica3.EF.Logic;
 using Practica3.EF.Logic.DTOs;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.UI.WebControls;
 
 namespace Practica6.EF.MVC.Controllers
 {
@@ -45,8 +40,7 @@ namespace Practica6.EF.MVC.Controllers
                 else
                 {
                     return RedirectToAction("AddCategoriesView");
-                }
-                
+                }  
             } 
             catch (Exception){
 
@@ -64,27 +58,22 @@ namespace Practica6.EF.MVC.Controllers
                 Description = categories.Description
             };
             return View(categoriesDto);
-
         }
-
         [HttpPost]
         public ActionResult EditView(CategoriesDto dto)
         {
             try
             {
-                if (ModelState.IsValid) { 
-                     var categoriesDto = new CategoriesDto
-                    {
-                        CategoryID = dto.CategoryID,
-                        CategoryName = dto.CategoryName,
-                        Description = dto.Description
-                    };
-                    categoriesLogic.Update(categoriesDto);
-                    TempData["mensaje"] = "modificado Correctamente";
-                    return RedirectToAction("Index");
-                }
-               return View();
-
+                var categoriesDto = new CategoriesDto
+                {
+                   CategoryID = dto.CategoryID,
+                   CategoryName = dto.CategoryName,
+                   Description = dto.Description
+                };
+                categoriesLogic.Update(categoriesDto);
+                TempData["mensaje"] = "Modificado Correctamente";
+                return RedirectToAction("Index");
+              
             }
             catch (Exception)
             {

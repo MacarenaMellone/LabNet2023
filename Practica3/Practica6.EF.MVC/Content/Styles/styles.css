@@ -1,0 +1,14 @@
+﻿.buttonEdit {
+    background-image: url('../../Media/icons8-edit-48.png');
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-size: cover;
+    background-position: center;
+    text-indent: -9999px;
+    border: none;
+    cursor: pointer;
+}
+.delete {
+    cursor: pointer;
+}

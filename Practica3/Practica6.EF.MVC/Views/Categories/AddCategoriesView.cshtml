@@ -2,19 +2,19 @@
 @{
     ViewBag.Title = "Categories";
 }
-
-<h1>Agregar Categoria</h1>
+<br/>
+<br/>
+<h1>Agregar Categoría</h1>
+<hr/>
 <br/>
 @using (Html.BeginForm("AddCategoriesView", "Categories", FormMethod.Post))
 {
-    
-    <label>Nombre Categoria:</label> @Html.TextBoxFor(c => c.CategoryName, new { @required = "required" })
+    <label>Nombre Categoría:</label> @Html.TextBoxFor(c => c.CategoryName, new { @class = "form-control", @required = "required", @maxlength = "15", autocomplete = "off" })
     <br/>
-    <label>Descripcion Categoria:</label> @Html.TextBoxFor(c => c.Description)
+    <label>Descripción Categoría:</label> @Html.TextBoxFor(c => c.Description, new { @class = "form-control", @maxlength = "150", autocomplete = "off" })
     <br/>
     <br/>
-    <input type="submit" class="btn btn-success" value="Guardar" onclick = "return confirm('Esta seguro que quiere guardar?')"/>
-    
+    <input type="submit" class="btn btn-success" value="Guardar" onclick="return confirm('¿Está seguro que quiere guardar?')" />
 }
 <br/>
 <br/>
