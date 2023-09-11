@@ -7,7 +7,7 @@
 <div>
     <h1>CATEGORIAS</h1>
 </div>
-
+@TempData["mensaje"]
 <table class="table">
     <thead>
         <tr>
@@ -25,9 +25,9 @@
                 <td class="categoryName">@categories.CategoryName</td>
                 <td class="description">@categories.Description</td>
                 <td>
-                    @Html.ActionLink("Editar", "EditView", new { id = categories.CategoryID }, "Categories")
+                    @Html.ActionLink("Editar", "EditView", new { id = categories.CategoryID}, "Categories")
 
-                    @*<a href='@Url.Action("", "EditView", new { categoryID = categories.CategoryID }, "Categories")' class="edit" data-toggle="modal">
+                    @*<a href='@Url.Action("EditView", "Categories", new { categoryID = categories.CategoryID })' class="edit" data-toggle="modal">
                         <svg class="material-icons" data-toggle="tooltip" title="Edit" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0,0,256,256">
                             <g fill="#1b7ee3" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M18.4,4.4l1.2,1.2l-13.4,13.4h-1.2v-1.2l13.4,-13.4M18.4,2c-0.3,0 -0.5,0.1 -0.7,0.3l-14.7,14.7v4h4l14.7,-14.7c0.4,-0.4 0.4,-1 0,-1.4l-2.6,-2.6c-0.2,-0.2 -0.4,-0.3 -0.7,-0.3z"></path><path transform="translate(0.13311,13.82136) rotate(-45.001)" d="M15.8,4.3h2v4.9h-2z"></path></g></g>
                         </svg>
@@ -51,6 +51,19 @@
         </svg><span> Agregar Categoría</span>
     </a>
 </div>
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+</nav>
 @section Scripts{
     <script type="text/javascript" charset="utf-8">
         function deleteCategories(id) {

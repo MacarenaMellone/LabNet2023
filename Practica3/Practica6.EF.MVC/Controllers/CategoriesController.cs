@@ -72,14 +72,18 @@ namespace Practica6.EF.MVC.Controllers
         {
             try
             {
-                var categoriesDto = new CategoriesDto
-                {
-                    CategoryID = dto.CategoryID,
-                    CategoryName = dto.CategoryName,
-                    Description = dto.Description
-                };
-                categoriesLogic.Update(categoriesDto);
-                return RedirectToAction("Index");
+                if (ModelState.IsValid) { 
+                     var categoriesDto = new CategoriesDto
+                    {
+                        CategoryID = dto.CategoryID,
+                        CategoryName = dto.CategoryName,
+                        Description = dto.Description
+                    };
+                    categoriesLogic.Update(categoriesDto);
+                    TempData["mensaje"] = "modificado Correctamente";
+                    return RedirectToAction("Index");
+                }
+               return View();
 
             }
             catch (Exception)
