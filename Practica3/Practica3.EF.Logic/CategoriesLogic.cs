@@ -7,10 +7,6 @@ namespace Practica3.EF.Logic
 {
     public class CategoriesLogic : BaseLogic, ILogic<CategoriesDto>
     {
-        //public List<Categories> GetAll()
-        //{
-        //    return context.Categories.ToList();
-        //}
         public List<CategoriesDto> GetAll()
         {
             IEnumerable<Categories> categories = context.Categories.AsEnumerable();
@@ -35,7 +31,6 @@ namespace Practica3.EF.Logic
         }
         public void Update(CategoriesDto dto)
         {
-            //var categoriesUpdate = context.Categories.Find(categories.CategoryID);
             Categories categoriesUpdate = context.Categories.FirstOrDefault(x => x.CategoryID == dto.CategoryID);
             if (categoriesUpdate != null)
             {
@@ -51,7 +46,6 @@ namespace Practica3.EF.Logic
         public bool Delete(int id)
         {
             bool result = true;
-            //var categoriesDelete = context.Categories.Find(id);
             Categories categoriesDelete = context.Categories.Find(id);
             if (categoriesDelete != null)
             {
