@@ -2,15 +2,13 @@
 using Practica3.EF.Logic.DTOs;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.Remoting.Messaging;
 
 namespace Practica3.EF.Logic
 {
     public class CategoriesLogic : BaseLogic, ILogic<CategoriesDto>
     {
-        //public List<Categories> GetAll()
-        //{
-        //    return context.Categories.ToList();
-        //}
         public List<CategoriesDto> GetAll()
         {
             IEnumerable<Categories> categories = context.Categories.AsEnumerable();
@@ -35,7 +33,6 @@ namespace Practica3.EF.Logic
         }
         public void Update(CategoriesDto dto)
         {
-            //var categoriesUpdate = context.Categories.Find(categories.CategoryID);
             Categories categoriesUpdate = context.Categories.FirstOrDefault(x => x.CategoryID == dto.CategoryID);
             if (categoriesUpdate != null)
             {
@@ -51,19 +48,20 @@ namespace Practica3.EF.Logic
         public bool Delete(int id)
         {
             bool result = true;
-            //var categoriesDelete = context.Categories.Find(id);
             Categories categoriesDelete = context.Categories.Find(id);
             if (categoriesDelete != null)
             {
                 context.Categories.Remove(categoriesDelete);
-                context.SaveChanges();
+                context.SaveChanges(); 
+                result = true;
+                return result;
             }
             else
             {
                 ExceptionsLogic.CustomExceptionDelete();
+                result = false;
+                return result;
             }
-
-            return result;
         }
         public Categories GetId(int id)
         {
