@@ -2,8 +2,6 @@
 using Practica3.EF.Logic.DTOs;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.Remoting.Messaging;
 
 namespace Practica3.EF.Logic
 {
@@ -31,7 +29,7 @@ namespace Practica3.EF.Logic
             context.Categories.Add(newCategories);
             context.SaveChanges();
         }
-        public void Update(CategoriesDto dto)
+        public bool Update(CategoriesDto dto)
         {
             Categories categoriesUpdate = context.Categories.FirstOrDefault(x => x.CategoryID == dto.CategoryID);
             if (categoriesUpdate != null)
@@ -39,10 +37,12 @@ namespace Practica3.EF.Logic
                 categoriesUpdate.CategoryName = dto.CategoryName;
                 categoriesUpdate.Description = dto.Description;
                 context.SaveChanges();
+                return true;
             }
             else
             {
                 ExceptionsLogic.CustomExceptionModificar();
+                return false;
             }  
         }
         public bool Delete(int id)

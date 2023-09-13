@@ -6,7 +6,7 @@ namespace Practica3.EF.Logic
     {
         List<T> GetAll();
         void Add(T dto);
-        void Update(T dto);
+        bool Update(T dto);
         bool Delete(int id);
     }
 }

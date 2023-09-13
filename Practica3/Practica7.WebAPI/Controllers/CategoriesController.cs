@@ -1,13 +1,9 @@
 ﻿using Practica3.EF.Entities;
 using Practica3.EF.Logic;
 using Practica3.EF.Logic.DTOs;
-using Practica7.WebAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Runtime.InteropServices;
 using System.Web.Http;
 
 namespace Practica7.WebAPI.Controllers
@@ -23,8 +19,7 @@ namespace Practica7.WebAPI.Controllers
                 CategoryName = c.CategoryName,
                 Description = c.Description
             }).ToList();
-            if (categoriesDto.Count == 0)
-            {
+            if (categoriesDto.Count == 0){
                 return BadRequest("Ha ocurrido un error");
             }
             return Ok(categoriesDto);
@@ -32,8 +27,7 @@ namespace Practica7.WebAPI.Controllers
         public IHttpActionResult GetId(int id)
         {
             Categories categories = logic.GetId(id);
-            if (categories == null)
-            {
+            if (categories == null){
                 return BadRequest("El ID no existe.");
             }
             CategoriesDto categoriesDto = new CategoriesDto
@@ -55,18 +49,14 @@ namespace Practica7.WebAPI.Controllers
             {
                 return BadRequest("No se ha podido insertar, CategoryName es requerido.");
             }
-
         }
         public IHttpActionResult PutUpdate(CategoriesDto categoriesDto)
-        { 
-            
-            try
-            {
-                logic.Update(categoriesDto);
+        {
+            bool result = logic.Update(categoriesDto);
+            if (result == true){
                 return Ok("Se ha editado exitosamente");
             }
-            catch (Exception)
-            {
+            else{
                 return BadRequest("No se ha podido modificar, el ID no existe.");
             }
         }
@@ -75,12 +65,10 @@ namespace Practica7.WebAPI.Controllers
             try
             {
                 bool result = logic.Delete(id);
-                if (result == true)
-                {
+                if (result == true){
                     return Ok("Eliminado exitosamente");
                 }
-                else
-                {
+                else{
                     return BadRequest("No se puede eliminar un ID que no existe.");
                 }
             }
@@ -88,7 +76,6 @@ namespace Practica7.WebAPI.Controllers
             {
                 return BadRequest("No se puede eliminar esta categoría, esta asociada a productos.");
             }
-
         }
     }
 }

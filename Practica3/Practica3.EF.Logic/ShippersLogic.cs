@@ -29,16 +29,18 @@ namespace Practica3.EF.Logic
             context.Shippers.Add(newShipper);
             context.SaveChanges();
         }
-        public void Update(ShippersDto dto)
+        public bool Update(ShippersDto dto)
         {
             var shippersUpdate = context.Shippers.FirstOrDefault(s => s.ShipperID == dto.ShipperID);
             if (shippersUpdate != null) {
                 shippersUpdate.CompanyName = dto.CompanyName;
                 shippersUpdate.Phone = dto.Phone;
                 context.SaveChanges();
+                return true;
             }
             else{
                 ExceptionsLogic.CustomExceptionModificar();
+                return false;
             }   
         }
         public bool Delete(int id)
