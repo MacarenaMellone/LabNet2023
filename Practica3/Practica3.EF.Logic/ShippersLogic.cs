@@ -51,12 +51,15 @@ namespace Practica3.EF.Logic
             {
                 context.Shippers.Remove(shipperDelete);
                 context.SaveChanges();
+                result = true;
+                return result;
             }
             else
             {
                 ExceptionsLogic.CustomExceptionDelete();
+                result = false;
+                return result;
             }
-            return result;
         }
         public Shippers GetId(int id)
         {
