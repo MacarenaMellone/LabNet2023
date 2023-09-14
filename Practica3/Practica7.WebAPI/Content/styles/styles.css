@@ -1,0 +1,8 @@
+﻿#boton {
+    background-image: url("https://www.realsimple.com/thmb/04skDeQL-vA0kfotYqFLbwoziI4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/bring-home-bacon-2000-4d2464badae3434ebda8808068c9ad20.jpg");
+    background-size: cover;
+    font-weight: 700;
+    font-size: 30px;
+    color: white;
+    text-shadow: 0px 4px 7px black;
+}

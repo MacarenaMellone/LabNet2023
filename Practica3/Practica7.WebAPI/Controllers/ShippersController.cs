@@ -4,8 +4,6 @@ using Practica3.EF.Logic.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace Practica7.WebAPI.Controllers
@@ -78,7 +76,6 @@ namespace Practica7.WebAPI.Controllers
             {
                 return BadRequest("No se puede eliminar un ID que no existe.");
             }
-            
         }
     }
 }

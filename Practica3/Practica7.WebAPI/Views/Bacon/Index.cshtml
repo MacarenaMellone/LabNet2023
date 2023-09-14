@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<link rel="stylesheet" href="~/Content/Styles/styles.css">
+<br />
+<br />
+<h1 class="text-md-center fw-bold">BACON IPSUM</h1>
+<hr />
+<br />
+<br />
+
+<div>
+    <h3 class="text-md-center" id="subText">GENERE TEXTO</h3>
+    <br />
+    <button class="btn col-md-2 offset-md-5" id="boton">PROBAR</button>
+    <br />
+    <br />
+    <p class="" id="ipsum"></p>
+</div>
+
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="~/Media/ron-swanson-bacon.gif" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="~/Media/66ad24b17ecf2d27_parks17.gif" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="~/Media/bacon-ron.gif" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+
+@section Scripts{
+    <script src="~/Scripts/JS/script.js"></script>
+}
