@@ -1,0 +1,56 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+    color:rgba(255, 255, 255, 0.466);
+}
+.body-table{
+    margin: 40px;
+}
+h1{
+    color:rgba(255, 255, 255, 0.774);
+    font-weight: 900;
+    /*font-size: 40px;*/
+    font-size: xxx-large;
+    margin: 50px;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 15px;
+}
+h2{
+    margin-left: 30px;
+    font-size: 14px;
+}
+.caja{
+    align-content: center;
+    margin: 40px;
+    border-radius: 15px;
+    /*border: 1px solid rgb(255, 255,255, 0.18);*/
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.253);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7);
+}
+.pag{
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background: none;
+}
+.tabla{
+    width: 100%;
+    padding-left: 35px;
+    padding-right: 35px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background: none;
+}
+.botones{
+    text-align: center;
+}
+.btndel{
+    margin-right: 10px;
+    background: rgba(231, 231, 231, 0.60);
+}
+.btnedit{
+    margin-left: 10px;
+    background: rgb(107, 107, 107, 0.60);
+}
