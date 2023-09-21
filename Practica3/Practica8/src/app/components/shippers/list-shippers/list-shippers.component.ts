@@ -50,12 +50,15 @@ export class ListShippersComponent implements OnInit {
   }
 
   openPopUp(shippers : any,title : any){
-    this.dialogRef.open(AddShippersComponent, {
+    var popup = this.dialogRef.open(AddShippersComponent, {
       data: {
         title: title,
         shippers: shippers
       }
     });
+    popup.afterClosed().subscribe(item =>{
+      this.getAllShippers();
+    })
   }
 
   getAllShippers(){

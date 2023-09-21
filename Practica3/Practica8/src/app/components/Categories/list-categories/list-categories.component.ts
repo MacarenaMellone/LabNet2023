@@ -55,12 +55,15 @@ export class ListCategoriesComponent implements OnInit {
   }
 
   openPopUp(categories : any,title : any){
-    this.dialogRef.open(AddCategoriesComponent, {
+    var popup = this.dialogRef.open(AddCategoriesComponent, {
       data: {
         title: title,
         categories: categories
       }
     });
+    popup.afterClosed().subscribe(item =>{
+      this.getAllCategories();
+    })
   }
 
    getAllCategories(){
@@ -77,7 +80,7 @@ export class ListCategoriesComponent implements OnInit {
   }
 
   onClickDelete(categories : any){
-    this.dialogConfirm = this.dialogRef.open(ConfirmDialogComponent, {
+    this.dialogConfirm = this.dialogRef.open(ConfirmDialogComponent,{
       disableClose: false
     }); 
     this.dialogConfirm.componentInstance.confirmMessage = "Esta seguro que quiere eliminar la categoría " + categories.CategoryID + "?";

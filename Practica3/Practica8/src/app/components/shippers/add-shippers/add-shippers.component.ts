@@ -78,16 +78,14 @@ export class AddShippersComponent implements OnInit {
 
   private addShipper(shippers: shippersDto){
     this.shippersService.postShippers(shippers).subscribe((res) => {
-    this.shippersForm.reset();
-    this.router.navigate(['list-shippers']);
+      this.closePopUP();
     },
     (err: HttpErrorResponse)=>{ this.openErrorDialog("Ha ocurrido un error: " + err.status + " - " + err.error)});
   }
 
   private updateShipper(shippers: shippersDto){
     this.shippersService.updateShippers(shippers).subscribe((res) => {
-      this.shippersForm.reset();
-      this.router.navigate(['list-shippers']);
+      this.closePopUP();
     },
     (err: HttpErrorResponse)=>{ this.openErrorDialog("Ha ocurrido un error: " + err.status + " - " + err.error)});
   }
@@ -97,5 +95,9 @@ export class AddShippersComponent implements OnInit {
       disableClose: false
     });
     this.dialogError.componentInstance.errorMessage = messageError;
+  }
+
+  closePopUP(){
+    this.ref.close();
   }
 }

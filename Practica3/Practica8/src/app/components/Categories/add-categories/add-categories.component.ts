@@ -78,16 +78,14 @@ export class AddCategoriesComponent implements OnInit {
 
   private addCategory(categories: categoriesDto){
     this.categoriesService.postCategories(categories).subscribe((res) => {
-    this.categoriesForm.reset();
-    this.router.navigate(['list-categories']);
+    this.closePopUP();
     },
     (err: HttpErrorResponse)=>{ this.openErrorDialog("Ha ocurrido un error: " + err.status + " - " + err.error)});
   }
 
   private updateCategory(category: categoriesDto){
     this.categoriesService.updateCategories(category).subscribe((res) => {
-      this.categoriesForm.reset();
-      this.router.navigate(['list-categories']);
+      this.closePopUP();
     },
     (err: HttpErrorResponse)=>{ this.openErrorDialog("Ha ocurrido un error: " + err.status + " - " + err.error)});
   }
@@ -97,5 +95,9 @@ export class AddCategoriesComponent implements OnInit {
       disableClose: false
     });
     this.dialogError.componentInstance.errorMessage = messageError;
+  }
+
+  closePopUP(){
+    this.ref.close();
   }
 }
