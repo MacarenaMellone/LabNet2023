@@ -1,0 +1,8 @@
+<div mat-dialog-container>
+    <h1 mat-dialog-title>Ha ocurrido un error!</h1>
+    <div mat-dialog-content class="message">{{errorMessage}}</div>
+    <div mat-dialog-content class="message">Intentalo mas tarde</div>
+    <div mat-dialog-actions class="buttons">
+      <button mat-raised-button color="primary" routerLink="/list-categories" (click)="dialogRef.close(true)">Volver</button>
+    </div>
+  </div>

@@ -1,0 +1,23 @@
+<div class="container">
+    <form [formGroup]="categoriesForm" (ngSubmit)="saveCategory()">
+    <!-- <div class="form-group"> -->
+    <h1 mat-dialog-title>{{inputData.title}}</h1>
+    <div mat-dialog-content>
+        <mat-form-field class="input1">
+            <mat-label>Nombre de Categoría</mat-label>
+            <input type="text" formControlName="categoriesName" id="categoriesName" matInput maxlength="15" required>
+        </mat-form-field>
+        <mat-form-field class="input2">
+            <mat-label>Descripción</mat-label>
+            <input type="text" formControlName="description" id="categDescription" matInput maxlength="40">
+        </mat-form-field>
+    </div>
+    <div class="btn">
+        <button class="btnCancel" type="reset" mat-raised-button mat-dialog-close>Cancelar</button>
+        <button class="btnAcept" type="submit" mat-raised-button [disabled]="categoriesForm.invalid">Aceptar</button>    
+    </div>        
+    <!-- </div> -->
+
+    </form>    
+</div>
+

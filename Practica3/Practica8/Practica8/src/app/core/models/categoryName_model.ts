@@ -1,5 +1,5 @@
 export interface CategoryName{
-    id: number,
+    categoryID: number,
     categoryName: string,
     description: string
     actions: string

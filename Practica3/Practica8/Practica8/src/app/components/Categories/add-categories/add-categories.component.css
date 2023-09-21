@@ -1,0 +1,25 @@
+.container{
+    width: 300px;
+}
+.btn{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.btnCancel{
+    margin: 5px;
+}
+.btnAcept{
+    margin: 5px;
+}
+.input1{
+    margin: 5px;
+    display: flex;
+    width: 280px;
+    flex-direction: column;
+}
+.input2{
+    margin: 5px;
+    display: flex;
+    width: 280px;
+    flex-direction: column;
+}

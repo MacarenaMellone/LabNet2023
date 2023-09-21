@@ -39,7 +39,7 @@ namespace Practica3.EF.Logic
                 return true;
             }
             else{
-                ExceptionsLogic.CustomExceptionModificar();
+                //ExceptionsLogic.CustomExceptionModificar();
                 return false;
             }   
         }
@@ -56,7 +56,7 @@ namespace Practica3.EF.Logic
             }
             else
             {
-                ExceptionsLogic.CustomExceptionDelete();
+                //ExceptionsLogic.CustomExceptionDelete();
                 result = false;
                 return result;
             }

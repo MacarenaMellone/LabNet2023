@@ -1,0 +1,12 @@
+.espacio{
+    flex: 1 1 auto;
+}
+.barra{
+    background: rgba(5, 5, 5, 0.692);
+    color: #ffffffbd;
+    font-family: 'Montserrat', sans-serif;
+    backdrop-filter: blur(7px);
+}
+.barra-titulo{
+    font-weight: 600;
+}
