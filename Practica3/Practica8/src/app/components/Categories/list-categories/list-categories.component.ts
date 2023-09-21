@@ -23,17 +23,12 @@ export class ListCategoriesComponent implements OnInit {
   dialogConfirm?: MatDialogRef<ConfirmDialogComponent>;
   dialogError?: MatDialogRef<ErrorDialogComponent>;
   
-
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  
-
   constructor(
     private categoriesService : CategoriesService,
-    private dialogRef: MatDialog
-    ) { } 
-
+    private dialogRef: MatDialog) { } 
 
   ngOnInit(): void {
      this.getAllCategories();
@@ -44,8 +39,6 @@ export class ListCategoriesComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
-
-  // MODAL
   openDialog(){
     this.openPopUp(0, 'Agregar Categoría');
   }
