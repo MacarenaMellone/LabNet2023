@@ -1,13 +1,22 @@
 <div class="container">
     <h1 class="titulo">PRÁCTICA 8</h1>
     <br>
+    <div class="cards">
     <mat-card class="card">
         <mat-card-title class="titulo-card">CATEGORÍAS</mat-card-title>
         <mat-card-subtitle class="sub-titulo">Acceda a la lista completa de Categorías, añada, edite o elimine.</mat-card-subtitle>
         <mat-card-actions class="btnCat">
-          <button mat-button class="btn" routerlink="listCategories">IR A CATEGORÍAS</button>
-          <a class="nav-link" href="http://localhost:4200/list-categories">Categories</a>
+          <a class="nav-link btn" href="http://localhost:4200/list-categories">Ir a Categories</a>
         </mat-card-actions>
       </mat-card>
+      <mat-card class="card">
+        <mat-card-title class="titulo-card">SHIPPERS</mat-card-title>
+        <mat-card-subtitle class="sub-titulo">Acceda a la lista completa de Shippers, añada, edite o elimine.</mat-card-subtitle>
+        <mat-card-actions class="btnCat">
+          <a class="nav-link btn" href="http://localhost:4200/list-categories">Ir a Shippers</a>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
 </div>
 <router-outlet></router-outlet>

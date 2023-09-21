@@ -1,53 +1,39 @@
 <br>
-<!-- <h1>CATEGORIES</h1>
-<h2>Acceda a la lista completa de Categorías, añada, edite o modifique.</h2> -->
 <div class="body-table">
     <div class="mat-elevation-z8 caja">
         <h1>CATEGORIES</h1>
         <h2>Acceda a la lista completa de Categorías, añada, edite o modifique.</h2>
         <br>
         <div class="botonadd">
-        <!-- <button mat-raised-button class="btnadd">AGREGAR</button> BOTON AGREGAR-->
-        <a mat-button (click)="openDialog()">AGREGAR</a>
+        <a class="btnadd" mat-raised-button (click)="openDialog()">AGREGAR</a>
         </div>
-        <!-- <mat-form-field appearance="standard">
-            <mat-label>Filter</mat-label>
-            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
-        </mat-form-field> -->
-        <table class="tabla" >
-
-            <!--- Note that these columns can be defined in any order.
-                The actual rendered columns are set as a property on the row definition" -->
-        
-            <!-- Id Column -->
-            <thead>
+        <table class="tabla">
+             <thead>
                 <tr>
                 <th> No. </th>
                 <th> Nombre Categoría </th>
                 <th> Descripción </th>
-                <th></th>
+                <th ></th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let categories of listCategories">
-                  <th>{{categories.CategoryID}}</th>
+                  <td >{{categories.CategoryID}}</td>
                   <td>{{categories.CategoryName}}</td>
                   <td>{{categories.Description}}</td>
                   <td class=".col-md-1">
-                   <!--- <button mat-raised-button color="primary"  routerLink="../form-categories" [queryParams]="{Id:categories.CategoryID}">Update</button>-->
-                   <button mat-raised-button color="primary"  (click)="onClickEdit(categories)">Update</button>
-                   <button mat-raised-button color="warn" (click)="onClickDelete(categories)">Delete</button>
+                   <button class="btnedit" mat-raised-button (click)="onClickEdit(categories.CategoryID)">Update</button>
+                   <button class="btnDel" mat-raised-button (click)="onClickDelete(categories)">Delete</button>
                   </td>
                 </tr>
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-              </tbody>
+              </tbody>          
         </table>
         <br>
-        <mat-paginator [pageSizeOptions]="[5,  10, 25, 100]"aria-label="Select page of users" class="pag" (pageChange)="onTableDataChange($event)"></mat-paginator>  
+        <mat-paginator [pageSizeOptions]="[5,  10, 25, 100]"aria-label="Select page of users" class="pag"></mat-paginator>
         <br>
     </div>
-
 </div>
 
 <router-outlet></router-outlet>

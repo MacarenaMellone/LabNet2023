@@ -9,12 +9,11 @@ import { SharedModule } from './components/shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { AddCategoriesComponent } from './components/Categories/add-categories/add-categories.component';
-import { DeleteCategoriesComponent } from './components/Categories/delete-categories/delete-categories.component';
 import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FormCategoriesComponent } from './components/Categories/form-categories/form-categories.component';
-
+import { ListShippersComponent } from './components/shippers/list-shippers/list-shippers.component';
+import { AddShippersComponent } from './components/shippers/add-shippers/add-shippers.component';
 
 @NgModule({
   declarations: [
@@ -22,10 +21,10 @@ import { FormCategoriesComponent } from './components/Categories/form-categories
     ListCategoriesComponent,
     HomeComponent,
     AddCategoriesComponent,
-    DeleteCategoriesComponent,
     ErrorDialogComponent,
     ConfirmDialogComponent,
-    FormCategoriesComponent
+    ListShippersComponent,
+    AddShippersComponent
   ],
   imports: [
     BrowserModule,

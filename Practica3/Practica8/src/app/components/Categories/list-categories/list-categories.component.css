@@ -5,11 +5,14 @@
 .body-table{
     margin: 40px;
 }
+th{
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.74);
+}
 h1{
     font-family: 'Montserrat', sans-serif;
     color:rgba(255, 255, 255, 0.774);
     font-weight: 700;
-    /*font-size: 40px;*/
     font-size: xxx-large;
     margin: 50px;
     margin-top: 40px;
@@ -24,16 +27,15 @@ h2{
 .caja{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    width: 90%;
     padding: 20px;
     margin: 60px;
     border-radius: 15px;
-    /*border: 1px solid rgb(255, 255,255, 0.18);*/
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-left: 1px solid rgba(255, 255, 255, 0.5);
     background-color: rgba(218, 218, 218, 0.199);
     backdrop-filter: blur(7px);
-    /*box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7);*/
     box-shadow: 6px 6px 20px 6px rgb(0 0 0 / 55%);
 }
 .pag{
@@ -59,20 +61,19 @@ h2{
     margin-right: 35px;
 }
 .btnadd{
-    background: rgba(255, 255, 255, 0.897);
+    background: rgba(255, 255, 255, 0.28);
     border-radius: 30px;
-    color: rgba(0, 0, 0, 0.514);
     font-weight: 600;
 }
 .btnadd:hover{
     background-color: rgba(99, 224, 126, 0.712);
 }
-.btndel{
+.btnDel{
     margin-left: 10px;
     background: rgb(107, 107, 107, 0.60);
     
 }
-.btndel:hover{
+.btnDel:hover{
     background-color: rgba(226, 73, 73, 0.712);
 }
 .btnedit{

@@ -40,17 +40,10 @@ export class AddCategoriesComponent implements OnInit {
     description: ['', Validators.maxLength(100)],
   });
   }
-
-/*   addForm = this.buildr.group({
-    categoryName : this.buildr.control(''),
-    description : this.buildr.control(''),
-    status : this.buildr.control(true)
-  });*/
   
   editOrAdd() {
-    let id = Number(this.route.snapshot.paramMap.get('CategoryID'));
-    if (id != 0) {
-      this.UpdateData(id);
+    if (this.inputData.categories>0) {
+      this.UpdateData(this.inputData.categories);
       this.addMode = false;
       this.modeTitle = 'Update';
     }
