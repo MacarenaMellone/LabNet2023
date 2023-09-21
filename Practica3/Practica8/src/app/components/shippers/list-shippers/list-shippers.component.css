@@ -1,0 +1,86 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+    color:rgba(255, 255, 255, 0.466);
+}
+.body-table{
+    margin: 40px;
+}
+th{
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.74);
+}
+h1{
+    font-family: 'Montserrat', sans-serif;
+    color:rgba(255, 255, 255, 0.774);
+    font-weight: 700;
+    font-size: xxx-large;
+    margin: 50px;
+    margin-top: 40px;
+    margin-left: 30px;
+    margin-bottom: 15px;
+}
+h2{
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 32px;
+    font-size: 14px;
+}
+.caja{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+    padding: 20px;
+    margin: 60px;
+    border-radius: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(218, 218, 218, 0.199);
+    backdrop-filter: blur(7px);
+    box-shadow: 6px 6px 20px 6px rgb(0 0 0 / 55%);
+}
+.pag{
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background: none;
+}
+.tabla{
+    width: 100%;
+    padding-left: 35px;
+    padding-right: 35px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background: none;
+}
+
+.botones{
+    text-align: center;
+}
+.botonadd{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 35px;
+}
+.btnadd{
+    background: rgba(255, 255, 255, 0.28);
+    border-radius: 30px;
+    font-weight: 600;
+}
+.btnadd:hover{
+    background-color: rgba(99, 224, 126, 0.712);
+}
+.btnDel{
+    margin-left: 10px;
+    background: rgb(107, 107, 107, 0.60);
+    
+}
+.btnDel:hover{
+    background-color: rgba(226, 73, 73, 0.712);
+}
+.btnedit{
+    margin-right: 10px;
+    background: rgba(231, 231, 231, 0.60);
+
+}
+.btnedit:hover{
+    background-color: rgba(73, 134, 226, 0.712);
+}

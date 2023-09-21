@@ -63,22 +63,12 @@ export class ListCategoriesComponent implements OnInit {
     });
   }
 
-  editCategory(categoryName:string){
-    console.log('Edit: ' ,categoryName);
-  }
- 
-  addCategory(){
-    console.log('Add: ');
-  }
-
    getAllCategories(){
     this.categoriesService.getAllCategories().subscribe(res =>{
       this.listCategories = res;
-      console.log(this.categoriesService.getAllCategories());
-      console.log(this.listCategories); 
-    }, (err: HttpErrorResponse)=>{ this.openErrorDialog("Status code: " + err.status + " - " + err.error)})
+    }, (err: HttpErrorResponse)=>{ this.openErrorDialog("Ha ocurrido un error: " + err.status + " - " + err.error)})
+  }
 
-  } 
   openErrorDialog(messageError: string){
     this.dialogError = this.dialogRef.open(ErrorDialogComponent,{
       disableClose: false
@@ -99,10 +89,10 @@ export class ListCategoriesComponent implements OnInit {
   }
 
   private deleteCategory(categoryID: number){
-    this.categoriesService.deleteCategories(categoryID).subscribe( categ =>{
+    this.categoriesService.deleteCategories(categoryID).subscribe( res =>{
       this.getAllCategories();
     },
-    (err: HttpErrorResponse) => {this.openErrorDialog("Esta categoria esta asociada a un poducto y no se puede eliminar")})
+    (err: HttpErrorResponse) => {this.openErrorDialog("Esta categoría no se puede eliminar porque está asociada a Productos")})
   };
 
 }

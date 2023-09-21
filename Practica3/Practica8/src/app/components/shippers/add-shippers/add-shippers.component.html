@@ -1,1 +1,19 @@
-<p>add-shippers works!</p>
+<div class="container">
+    <form [formGroup]="shippersForm" (ngSubmit)="saveShipper()">
+    <h1 mat-dialog-title>{{inputData.title}}</h1>
+    <div mat-dialog-content>
+        <mat-form-field class="input1">
+            <mat-label>Nombre de Compañía</mat-label>
+            <input type="text" formControlName="companyName" id="companyName" matInput maxlength="40" required>
+        </mat-form-field>
+        <mat-form-field class="input2">
+            <mat-label>Teléfono</mat-label>
+            <input type="text" formControlName="phone" id="shipperPhone" matInput maxlength="24">
+        </mat-form-field>
+    </div>
+    <div class="btn">
+        <button class="btnCancel" type="reset" mat-raised-button mat-dialog-close>Cancelar</button>
+        <button class="btnAcept" type="submit" mat-raised-button [disabled]="shippersForm.invalid">Aceptar</button>    
+    </div>
+    </form>    
+</div>

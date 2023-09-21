@@ -16,11 +16,7 @@ export class CategoriesService {
   public getAllCategories(): Observable<Array<categoriesDto>> {
     return this.http.get<Array<categoriesDto>>(this.apiUrl);
   }
-    // const userToken = `Bearer ${this._authservice.readToken()}`;
-    // const headers = new HttpHeaders({ Authorization: userTolen });
-    // const options = {headers: headers};
-    
-    
+  
   public postCategories(categoriesDto:categoriesDto): Observable <any>{
     return this.http.post(this.apiUrl, categoriesDto);
   } 

@@ -1,6 +1,5 @@
 <div class="container">
     <form [formGroup]="categoriesForm" (ngSubmit)="saveCategory()">
-    <!-- <div class="form-group"> -->
     <h1 mat-dialog-title>{{inputData.title}}</h1>
     <div mat-dialog-content>
         <mat-form-field class="input1">
@@ -15,9 +14,6 @@
     <div class="btn">
         <button class="btnCancel" type="reset" mat-raised-button mat-dialog-close>Cancelar</button>
         <button class="btnAcept" type="submit" mat-raised-button [disabled]="categoriesForm.invalid">Aceptar</button>    
-    </div>        
-    <!-- </div> -->
-
+    </div>
     </form>    
 </div>
-

@@ -1,1 +1,39 @@
-<p>list-shippers works!</p>
+<br>
+<div class="body-table">
+    <div class="mat-elevation-z8 caja">
+        <h1>SHIPPERS</h1>
+        <h2>Acceda a la lista completa de Shippers, añada, edite o modifique.</h2>
+        <br>
+        <div class="botonadd">
+        <a class="btnadd" mat-raised-button (click)="openDialog()">AGREGAR</a>
+        </div>
+        <table class="tabla">
+             <thead>
+                <tr>
+                <th> No. </th>
+                <th> Nombre Compañía </th>
+                <th> Teléfono </th>
+                <th ></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let shippers of listShippers">
+                  <td >{{shippers.ShipperID}}</td>
+                  <td>{{shippers.CompanyName}}</td>
+                  <td>{{shippers.Phone}}</td>
+                  <td class=".col-md-1">
+                   <button class="btnedit" mat-raised-button (click)="onClickEdit(shippers.ShipperID)">Update</button>
+                   <button class="btnDel" mat-raised-button (click)="onClickDelete(shippers)">Delete</button>
+                  </td>
+                </tr>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </tbody>          
+        </table>
+        <br>
+        <mat-paginator [pageSizeOptions]="[5,  10, 25, 100]"aria-label="Select page of users" class="pag"></mat-paginator>
+        <br>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

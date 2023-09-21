@@ -4,7 +4,6 @@ import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dial
 import { categoriesDto } from 'src/app/core/models/categoriesDto';
 import { CategoriesService } from '../service/categories.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CategoryName } from 'src/app/core/models/categoryName_model';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ErrorDialogComponent } from '../../error-dialog/error-dialog.component';
 
@@ -58,7 +57,7 @@ export class AddCategoriesComponent implements OnInit {
         description: this.updateData.Description
       })
     },
-    (err: HttpErrorResponse)=>{ this.openErrorDialog("Status code: " + err.status + " - " + err.error)});
+    (err: HttpErrorResponse)=>{ this.openErrorDialog("Ha ocurrido un error: " + err.status + " - " + err.error)});
   }
 
   saveCategory(){
@@ -82,7 +81,7 @@ export class AddCategoriesComponent implements OnInit {
     this.categoriesForm.reset();
     this.router.navigate(['list-categories']);
     },
-    (err: HttpErrorResponse)=>{ this.openErrorDialog("Status code: " + err.status + " - " + err.error)});
+    (err: HttpErrorResponse)=>{ this.openErrorDialog("Ha ocurrido un error: " + err.status + " - " + err.error)});
   }
 
   private updateCategory(category: categoriesDto){
@@ -90,7 +89,7 @@ export class AddCategoriesComponent implements OnInit {
       this.categoriesForm.reset();
       this.router.navigate(['list-categories']);
     },
-    (err: HttpErrorResponse)=>{ this.openErrorDialog("Status code: " + err.status + " - " + err.error)});
+    (err: HttpErrorResponse)=>{ this.openErrorDialog("Ha ocurrido un error: " + err.status + " - " + err.error)});
   }
 
   openErrorDialog(messageError: string){
